@@ -1,3 +1,8 @@
 .gif-container {
 	display : inline-block;
 }
+
+.gif{
+	height:200px;
+	width:200px;
+}

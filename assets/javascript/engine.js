@@ -85,24 +85,24 @@ $(document).ready(function(){
 	});
 
 	//if a topic button is clicked
-	$('.topic').on('click', function() {
-		//retrieve value of button		
-		var valueOfButton = $(this).val();
-		//send it to the api, display results
-		requestFromAPI(createQueryURL(valueOfButton));
+	$('#topicButtons').on('click', '.topic', function() {
+			//retrieve value of button		
+			var valueOfButton = $(this).val();
+			//send it to the api, display results
+			requestFromAPI(createQueryURL(valueOfButton));
 	});
 
-	$('.gif').on('click', function() {
-		console.log('Clicked a gif');
-		var state = $(this).attr('data-state');
-    	var animate = $(this).attr('data-animate');
-    	var still = $(this).attr('data-still');
-    	if(state==='still') {
-        	$(this).attr('data-state', 'animate');
-        	$(this).attr('src', animate);
-      	} else if (state!='still') {
-        	$(this).attr('data-state', 'still');
-        	$(this).attr('src', still);
-      	}
+	$('#gifDiv').on('click', '.gif', function() {
+			console.log('Clicked a gif');
+			var state = $(this).attr('data-state');
+	    	var animate = $(this).attr('data-animate');
+	    	var still = $(this).attr('data-still');
+	    	if(state==='still') {
+	        	$(this).attr('data-state', 'animate');
+	        	$(this).attr('src', animate);
+	      	} else if (state!='still') {
+	        	$(this).attr('data-state', 'still');
+	        	$(this).attr('src', still);
+	      	}
 	});
 });
