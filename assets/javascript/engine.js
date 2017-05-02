@@ -12,21 +12,20 @@ function appendGifToDOM(info) {
 	var gifRating = $('<p>');
 	gifRating.append('Rating : '+info.rating);
 	var gifImage = $('<img class=\'gif\'>');
-	//make inital image the still image
+	//make inital image the still image, add necessary attributes
 	gifImage.attr('src', info.images.downsized_still.url);
 	gifImage.attr('data-still', info.images.downsized_still.url);
 	gifImage.attr('data-animate', info.images.downsized.url);
 	gifImage.attr('data-state', 'still');
 	//append div with rating, class still, class giphy-gif
-	gifDiv.append(gifRating);
 	gifDiv.append(gifImage);
+	gifDiv.append(gifRating);
 	$('#gifDiv').append(gifDiv);
-	//and img src of moving gifs etc, all info i need
 };
 
 //create queryURL
 function createQueryURL(query) {
-	return 'http://api.giphy.com/v1/gifs/search?q=' + query + '&api_key='+ apiKey + '+&limit=10';
+	return 'https://api.giphy.com/v1/gifs/search?q=' + query + '&api_key='+ apiKey + '+&limit=10';
 }
 
 //clear gifDiv in Dom, in prep for next search
